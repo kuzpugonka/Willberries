@@ -4,12 +4,17 @@ const search = () => {
   // console.log('input: ', input);
   // console.log('searchBtn: ', searchBtn);
 
-  input.addEventListener('input', (event) => {
-    console.log(event.target.value);
-  })
-  searchBtn.addEventListener('click', () => {
-    console.log(input.value);
-  })
+  try {
+    input.addEventListener('input', (event) => {
+      console.log(event.target.value);
+    })
+    searchBtn.addEventListener('click', () => {
+      console.log(input.value);
+    })    
+  } catch (error) {
+    // console.error(error.message);
+    console.error('Уважаемый верстальщик, верните класс, пожалуйста))))')
+  }
 };
 
 search();
