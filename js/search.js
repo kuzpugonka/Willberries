@@ -1,8 +1,7 @@
 const search = () => {
   const input = document.querySelector(".search-block > input");
   const searchBtn = document.querySelector(".search-block > button");
-  // console.log('input: ', input);
-  // console.log('searchBtn: ', searchBtn);
+  const viewAll = document.querySelector(".more");
 
   const renderGoods = (goods) => {
     console.log("goods: ", goods);
@@ -57,6 +56,11 @@ const search = () => {
     searchBtn.addEventListener("click", () => {
       getData(input.value);
     });
+    if (viewAll) {
+      viewAll.addEventListener("click", () => {
+        getData('')
+      });
+    }
   } catch (error) {
     // console.error(error.message);
     console.error("Уважаемый верстальщик, верните класс, пожалуйста))))");
