@@ -1,5 +1,6 @@
 const getGoods = () => {
   const links = document.querySelectorAll(".navigation-link"); //сначала получаем все ссылки из меню
+  const viewAll = document.querySelector(".more");
 
   const renderGoods = (goods) => {
     console.log("goods: ", goods);
@@ -65,6 +66,13 @@ const getGoods = () => {
     window.location.pathname === "/goods.html"
   ) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
+  }
+
+  if (viewAll) {
+    viewAll.addEventListener("click", (event) => {
+      event.preventDefault()
+      getData('')
+    });
   }
 };
 
